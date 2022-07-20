@@ -1,0 +1,28 @@
+[
+  {
+    "name": "subscription",
+    "inputKeys": [
+      "customerName",
+      "country",
+      "eaId",
+      "region",
+      "status"
+    ],
+    "type": "SIMPLE"
+  },
+  {
+    "name": "license_1",
+    "inputKeys": [
+      "productType",
+      "quantity",
+      "startDate",
+      "endDate",
+      "classification",
+      "licenseType",
+      "billingType",
+      "status",
+      "hscSubscriptionId"
+    ],
+    "type": "SIMPLE"
+  }
+]

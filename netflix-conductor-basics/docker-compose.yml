@@ -1,0 +1,26 @@
+version: "3.2"
+services:
+  conductor-server:
+    image: 224224/conductor-server:latest
+    ports:
+      - "2090:8080"
+    networks:
+      node_net:
+        ipv4_address: 172.29.1.10
+  conductor-ui:
+    image: 224224/conductor-ui:latest
+    ports:
+      - "6060:5000"
+    restart: always
+    environment:
+      - WF_SERVER=http://172.29.1.10:8080/api/
+    networks:
+      node_net:
+        ipv4_address: 172.29.1.11
+# networking for the Redis container
+networks:
+  node_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.29.0.0/16
